@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			box {
+				perspective: 1000px;
+			}
+			.box {
+				transform-style: preserve-3d;
+				position: relative;
+				margin: 50px auto;
+				width: 800px;
+				height: 800px;
+				transform: rotateX(-30deg) rotateY(-30deg);
+				animation: body 3s infinite linear;
+			}
+			.box .a {
+				background: currentcolor;
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				left: 50%;
+				top: 50%;
+				margin-left: -100px;
+				margin-top: -100px;
+			}
+			.box .b {
+				background: currentcolor;
+				position: absolute;
+				width: 300px;
+				height: 300px;
+				left: 50%;
+				top: 50%;
+				margin-left: -150px;
+				margin-top: -150px;
+				opacity: .5;
+			}
+			.box:hover .a {
+				box-shadow: 0px 0px 10px currentcolor;
+				transform: rotateZ(360ddeg) translateZ(200px);
+			}
+			.box:hover .b1 {
+				transition: 1s linear;
+				transform: translateZ(200px);
+			}
+			.box:hover .b2 {
+				transition: 1s linear;
+				transform: rotateY(180deg) translateZ(200px);
+			}
+			.box:hover .b3 {
+				transition: 1s linear;
+				transform: rotateX(90deg) translateZ(200px);
+			}
+			.box:hover .b4 {
+				transition: 1s linear;
+				transform: rotateX(-90deg) translateZ(200px);
+			}
+			.box:hover .b5 {
+				transition: 1s linear;
+				transform: rotateY(90deg) translateZ(200px);
+			}
+			.box:hover .b6 {
+				transition: 1s linear;
+				transform: rotateY(-90deg) translateZ(200px);
+			}
+			.box .a1 {
+				color: red;
+				transform: translateZ(100px);
+			}
+			.box .a2 {
+				color: green;
+				transform: rotateY(180deg) translateZ(100px);
+			}
+			.box .a3 {
+				color: yellow;
+				transform: rotateX(90deg) translateZ(100px);
+			}
+			.box .a4 {
+				color: blue;
+				transform: rotateX(-90deg) translateZ(100px);
+			}
+			.box .a5 {
+				color: orange;
+			transform: rotateY(90deg) translateZ(100px);
+			}
+			.box .a6 {
+				color: #7FFF00;
+				transform: rotateY(-90deg) translateZ(100px);
+			}
+			.box .b1 {
+				color: gray;
+				transform: translateZ(150px);
+			}
+			.box .b2 {
+				color: gray;
+				transform: rotateY(180deg) translateZ(150px);
+			}
+			.box .b3 {
+				color: gray;
+				transform: rotateX(90deg) translateZ(150px);
+			}
+			.box .b4 {
+				color: gray;
+				transform: rotateX(-90deg) translateZ(150px);
+			}
+			.box .b5 {
+				color: gray;
+			    transform: rotateY(90deg) translateZ(150px);
+			}
+			.box .b6 {
+				color: gray;
+				transform: rotateY(-90deg) translateZ(150px);
+			}
+			@keyframes body{
+				0%{
+					transform:rotateX(0deg) rotateY(0deg);
+				}
+				100%{
+					transform: rotateX(360deg) rotateY(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="a a1"></div>
+			<div class="a a2"></div>
+			<div class="a a3"></div>
+			<div class="a a4"></div>
+			<div class="a a5"></div>
+			<div class="a a6"></div>
+			<div class="b b1"></div>
+			<div class="b b2"></div>
+			<div class="b b3"></div>
+			<div class="b b4"></div>
+			<div class="b b5"></div>
+			<div class="b b6"></div>
+		</div>
+	</body>
+</html>
