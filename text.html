@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			document.write('<h2>第一题</h2>');
+			let a=45;
+			let b=50;
+			if(a>b){
+				document.write('a大于b');
+			}else if(a<b){
+				document.write('a小于b');
+			}else{
+				document.write('a等于b');
+			}
+			document.write('<hr>');
+			document.write('<h2>第二题</h2>');
+			let c=90;
+			if(c % 5 == 0){
+				document.write('可以被5整除');
+				document.write('<br />');
+				document.write(`结果为：${c/5}`);
+			}else{
+				document.write('不可以被5整除');
+			}
+			document.write('<hr>');
+			document.write('<h2>第三题</h2>');
+			let num='';
+			for(i=1;i<=100;i++){
+				if(i%2==0){
+					num=num+i+' ';
+				}
+			}
+			document.write(num+' ');
+			document.write('<hr>');
+			document.write('<h2>第四题</h2>');
+			let j=1;
+			let num1='';
+			while(j<100){
+				if(j%7==0){
+					num1=num1+j+' ';
+				}
+				j++;
+			}
+			document.write(num1);
+			document.write('<hr>');
+			document.write('<h2>第五题</h2>');
+			let g=12;
+			let h=45;
+			let l=69;
+			if(g>h && g>l){
+				document.write(g);
+			}else if(h>g && h>l){
+				document.write(h);
+			}else if(l>g && l>h){
+				document.write(l);
+			}else
+			document.write('<hr>');
+			document.write('<h2>第一题</h2>');
+			let num2='';
+			let num3='';
+			for(z=1;z<=100;z++){
+				if(z%2==0){
+					num2=num2+z+' ';
+				}else{
+					num3=num3+z+' ';
+				}
+			}
+			document.write(num2);
+			document.write('<br>');
+			document.write(num3);
+			document.write('<hr>');
+			document.write('<h2>第二题</h2>');
+			function test(...w){
+				if(w.length==0){
+					return;
+				}
+				var result = '';
+				var sum = 0;
+				w.sort(function(w,q){
+					return q - w ;
+				});
+				for(var i=0;i<w.length;i++){
+					result = result + w[i] + '+';
+					sum = sum + w[i];
+				};
+				result = result.substr(0,result.length-1) + '=' + sum;
+				return result;
+			}
+			document.write(test(1,2,3,4,5));
+			document.write('<hr>');
+			document.write('<h2>第三题</h2>');
+			document.write('<input type="text" class="k">');
+			document.write('<br>');
+			document.write('<input type="text" class="o">');
+			document.write('<br>');
+			document.write('<button>比较</button>');
+			document.write('<p></p>')
+			const inputk=document.querySelector('.k');
+			const inputo=document.querySelector('.o');
+			const pare=document.querySelector('p');
+			document.querySelector('button').onclick=function(e){
+				if(isNaN(inputk.value) || isNaN(inputo.value)){
+					pare.textContent='请输入数字';
+				}else{
+					if(Math.floor(inputk.value)>Math.floor(inputo.value)){
+						pare.textContent='k的数值大';
+					}else if(Math.floor(inputk.value)<Math.floor(inputo.value)){
+						pare.textContent='o的';
+					}else{
+						pare.textContent='k的数值等于o的数值';
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
