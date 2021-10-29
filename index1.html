@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h2 id="first">练习题4,第一题</h2>
+		<p class="a"></p>
+		<hr>
+		<h2 id="sencond">练习题4,第二题</h2>
+		<p class="b"></p>
+		<hr>
+		<h2 id="third">练习题4,第三题</h2>
+		<p class="c"></p>
+		<hr>
+		<h2 id="fouth">练习题4,第四题</h2>
+		<p class="d"></p>
+		<hr>
+		<h2 id="fifth">练习题5,第二题</h2>
+		<p class="e"></p>
+		<input type="button" id="btn"  value="点击生成随机四位数" />
+		<span id='num'></span>
+		<hr>
+		<h2 id="sixth">练习题,第三题</h2>
+		<p class="f"></p>
+		<input type="text2" id="txt" value="" />
+		<select id="select">
+				<option value="+">+</option>
+				<option value="-">-</option>
+				<option value="*">x<option>
+				<option value="/">/</option>
+			</select>
+		<input type="text1" id="txt1" value="" />
+		<button type="button" class="lll">=</button>
+		<input type="text" id="z" />
+		<hr>
+		<h2 id="senverth">练习题,第四题</h2>
+		<p class="g"></p>
+		<hr>
+		<script>
+		{ //练习题4，第一题
+		const p=document.querySelector('.a');
+		// let str='a1a3';
+		let a=['a1','a2','...','an-1','an'];
+		// for(let i=0;i<str.length-1;i++){
+		// 	a[i]=str[i];
+		// }
+		a.reverse();
+		p.textContent=a;
+		}
+		{  //  练习题4,第二题
+			const p=document.querySelector('.b');
+			let num='192.168.1.10';
+			let a=num.split('.');
+			for(let i=0;i<=a.length-1;i++){
+				if(i == a.length-1){
+					a[i]='*';
+				}
+			}
+			p.textContent=a;
+		}
+		{  //  练习题4,第三题
+			function a(){
+				const p=document.querySelector('.c');
+				let d=new Date();
+				let mon=['1','2','3','4','5','6','7','8','9','10','11','12'];
+				let week='日一二三四五六';
+				p.textContent=`${d.getFullYear()}年${mon[d.getMonth()]}月${d.getDate()}日,${d.getMinutes()}:${d.getSeconds()},星期${d.getDay()}`;
+			}
+			a();
+			setInterval(a, 1000);
+		}
+		{  //  练习题4,第四题
+			const p=document.querySelector('.d');
+			let str='afzdvzvdsvda';
+			if(str.length>=2 && str.length<=10){
+				p.textContent='字符串长度符合要求';
+			}else{
+				p.textContent='字符串不符合要求';
+			}
+		}
+		{   //  练习题5,第二题
+			
+			let a=Math.floor(Math.random()*9);
+			let b=Math.floor(Math.random()*9);
+			let c=Math.floor(Math.random()*9);
+			let d=Math.floor(Math.random()*9);
+			const btn =document.querySelector('#btn')
+			btn.addEventListener('click',function(){
+				const p=document.querySelector('.e');
+				p.textContent=`${a}${b}${c}${d}`;
+				 a=Math.floor(Math.random()*9);
+				 b=Math.floor(Math.random()*9);
+				 c=Math.floor(Math.random()*9);
+				 d=Math.floor(Math.random()*9);
+			});
+		}
+		{   //  练习题,第三题
+		const p=document.querySelector('.f');	
+		const txt=document.querySelector('#txt');
+		const txt1=document.querySelector('#txt1');
+		const z = document.querySelector('#z');
+		const select=document.querySelector('#select');
+		function count(){
+			if(select.value == '+'){
+				z.value=Number(txt.value)+Number(txt1.value);
+			}else if(select.value == '-'){
+				z.value=Number(txt.value)-Number(txt1.value);
+			}else if(select.value == '*'){
+				z.value=Number(txt.value)*Number(txt1.value);
+			}else if(select.value == '/'){
+				z.value=Number(txt.value)/Number(txt1.value);
+			}else{}
+		}
+		document.querySelector('.lll').addEventListener('click', count)
+		}
+		{   //  练习题,第四题
+			const p=document.querySelector('.g');
+			function times(){
+				let d=new Date;
+				let getFullYear=d.getFullYear();
+				let getMonth=d.getMonth()+1;
+				let getDate=d.getDate();
+				let getDay=d.getDay();
+				let getHours=d.getHours();
+				let getMinutes=d.getMinutes();
+				let getSeconds=d.getSeconds();
+				p.textContent=`${getFullYear}年 ${getMonth}月 ${getDate}日 星期${getDay} ${getHours}:${getMinutes}:${getSeconds}`;
+			}
+			times();
+			setInterval(times, 1000);
+		}
+		</script>
+	</body>
+</html>
