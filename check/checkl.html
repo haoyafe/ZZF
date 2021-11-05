@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		#one {
+			width: 180px;
+			border: 1px solid;
+		}
+		#a {
+			width: 500px;
+			height: 400px;
+			margin: 0 auto;
+		}
+		#b {
+			width: 4800px;
+			height: 50px;
+		}
+		#c {
+			width: 100px;
+			height: 40px;
+			background-color: lightblue;
+			margin: 5px;
+			float: left;
+		}
+		#d {
+			width: 380px;
+			height: 40px;
+			background-color: bisque;
+			float: left;
+			margin: 5px;
+		}
+		#e {
+			width: 490px;
+			height: 40px;
+			background-color: slategray;
+			margin: 5px;
+		}
+		#f {
+			width: 200px;
+			height: 40px;
+			margin: 0 auto;
+		}
+		h1 {
+			text-align: center;
+		}
+		dt {
+			text-align: center;
+			margin-top: 6px;
+		}
+		dd {
+			float: left;
+			margin-top: 6px;
+			margin-left: 2px;
+		}
+		</style>
+	</head>
+	<body>
+		<h2 id="t1">练习题第一题</h2>
+			<input id="checkAll" type="checkbox" value=""/>&nbsp;全选/全不选
+			<button id="severseCheck">反选</button><br><br>
+			<div id="one">
+			<input class="check" type="checkbox"/>&nbsp;复选框说明信息<br>
+			<input class="check" type="checkbox"/>&nbsp;复选框说明信息<br>
+			<input class="check" type="checkbox"/>&nbsp;复选框说明信息<br>
+			<input class="check" type="checkbox"/>&nbsp;复选框说明信息<br>
+			<input class="check" type="checkbox"/>&nbsp;复选框说明信息<br>
+			</div>
+		<hr>
+		<h2 id="t21">练习题第二题(1)</h2>
+		<div id="two">
+			<form action="2.html" method="get">
+					姓名：<input type="text" name="" id="name" value=""><br>
+					密码：<input type="password" name="" id="mima" value=""><br>
+					性别：<input type="radio" name="ren" id="sex1">男
+					<input type="radio" name="ren" id="sex2" checked="">女<br>
+					年龄：<select name="">
+						<option value="">-请选择-</option>
+						<option value="">19</option>
+						<option value="">20</option>
+						<option value="">21</option>
+						<option value="">22</option>
+					</select>
+					<br>
+					爱好：<input type="checkbox" id="age1" value="" />读书
+						<input type="checkbox" id="age2" value="" />音乐
+						<input type="checkbox" id="age3" value="" />上网
+					<br>
+					简介：<textarea name="" rows="5" cols="20" id="jianjie"></textarea><br>
+						<input type="submit" id="first" value="提交" >
+						<input type="reset" value="重置" >
+			</form>
+		</div>
+		<hr>
+		<h2 id="t22">练习题第二题(2)</h2>
+		<div>
+			<form action="2.html" method="get">
+				<div id="a">
+					<h1>Information Form</h1>
+					<div id="b">
+						<div id="c">
+							<dt>name</dt>
+						</div>
+						<div id="d">
+							<dd><input type="text" name="" id="name1"></dd>
+						</div>
+					</div>
+					<div id="b">
+						<div id="c"><dt>pwd</dt></div>
+						<div id="d">
+							<dd><input type="password" name="" id="mima2"></dd>
+						</div>
+					</div>
+					<div id="b">
+						<div id="c"><dt>sex</dt></div>
+						<div id="d">
+							<dd><input type="radio" name="ren" id="sex3" checked>male<input type="radio" name="ren" id="sex4">female</dd>
+						</div>
+					</div>
+					<div id="b">
+						<div id="c"><dt>age</dt></div>
+						<div id="d">
+							<dd><select name="" id="">
+									<option value="">1</option>
+									<option value="">2</option>
+									<option value="">3</option>
+									<option value="">4</option>
+								</select></dd>
+						</div>
+					</div>
+					<div id="b">
+						<div id="c"><dt>course</dt></div>
+						<div id="d">
+							<dd><input type="checkbox" name="" id="age6">Chinese
+								<input type="checkbox" name="" id="age7">Math
+								<input type="checkbox" name="" id="age8">English
+							</dd>
+						</div>
+					</div>
+					<div id="e">
+						<div id="f">
+						<dd>
+							<input type="submit" id="second" value="Submit it!" />
+							<input type="reset" value="Reset it!" />
+						</dd>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<hr>
+		<h2 id="t3">练习题第三题</h2>
+		<img src="images/E-R.jpg" />
+		<hr>
+		<script>
+			 { //  第一题
+				const t1=document.querySelector('#t1');
+				const checkAll=document.querySelector('#checkAll');
+				const severseCheck=document.querySelector('#severseCheck');
+				const checkList=document.querySelectorAll('.check');
+				checkAll.onclick=function(){
+					if(checkAll.checked===true){
+						for(let i=0;i<checkList.length;i++){
+							checkList[i].checked=true;
+						}
+					}
+					if(checkAll.checked===false){
+						for(let i=0;i<checkList.length;i++){
+							checkList[i].checked=false;
+						}
+					}
+				}
+				severseCheck.onclick=function(){
+					for(let i=0;i<checkList.length;i++){
+						checkList[i].checked=!checkList[i].checked;
+					}
+				}
+			}
+			{  //  第二题(1)
+				const t21=document.querySelector('#t21');
+				const first=document.querySelector('#first');
+				first.onclick=function(){
+					const name=document.querySelector('#name');
+					const mima=document.querySelector('#mima');
+					let mima1=String(mima.value);
+					const sex1=document.querySelector('#sex1');
+					const sex2=document.querySelector('#sex2');
+					const age1=document.querySelector('#age1');
+					const age2=document.querySelector('#age2');
+					const age3=document.querySelector('#age3');
+					const jianjiae=document.querySelector('#jianjie');
+					if(name.value===''  ||  mima.length<2  ||  mima.length>10  ||
+					   (sex1.checked===false&&sex2.checked===false)  ||  (age1.checked===false&&age2.checked===false&&age3.checked===false)
+					   ||  jianjie.length<10  ||jianjie.length===''){
+						   alert('提交失败，表单有问题！');
+					   }else{
+						   return true;
+					   }
+				}
+				
+			}
+			{  //  第二题(2)
+				const t22=document.querySelector('#t22');
+				const second=document.querySelector('#second');
+				second.onclick=function(){
+					const name1=document.querySelector('#name1');
+					const mima2=document.querySelector('#mima2');
+					let mima3=String(mima2.value);
+					const sex3=document.querySelector('#sex3');
+					const sex4=document.querySelector('#sex4');
+					const age6=document.querySelector('#age6');
+					const age7=document.querySelector('#age7');
+					const age8=document.querySelector('#age8');
+					if(name1.value===''  ||  mima2.length<2  ||  mima2.length>10  ||
+					   (sex3.checked===false&&sex4.checked===false)  ||  
+					   (age6.checked===false&&age7.checked===false&&age8.checked===false)){
+						   alert('提交失败，表单有问题！');
+					   }else{
+						   return true;
+					   }
+				}
+			}
+			{  //  第三题
+			const t3=document.querySelector('#t3');
+			}
+		</script>
+	</body>
+</html>
